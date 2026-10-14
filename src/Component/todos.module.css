@@ -1,0 +1,628 @@
+/* =========================
+   GLOBAL
+========================= */
+
+:global(*) {
+  box-sizing: border-box;
+}
+
+:global(html) {
+  scroll-behavior: smooth;
+}
+
+:global(body) {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  background: #b8cce2;
+  color: #1e293b;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      135deg,
+      #cddae6 0%,
+      #aea9c4 50%,
+      #b0c2c3 100%
+    );
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: 100%;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0 6%;
+  background: #042044;
+  border-bottom: 1px solid #4c73a2;
+  box-shadow: 0 5px 18px rgba(154, 187, 241, 0.12);
+  box-sizing: border-box;
+}
+
+
+/* LOGO */
+
+.navbar a:first-child {
+  margin-right: auto;
+  color: #e3e5ed;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.navbar a:first-child span {
+  color: #0284c7;
+
+  transition: color 0.5s ease;
+}
+
+.navbar a:first-child:hover {
+  opacity: 0.65;
+  transform: translateY(-2px);
+}
+
+.navbar a:first-child:hover span {
+  color: #774fb3;
+}
+
+
+/* HOME */
+
+.navbar a:not(:first-child) {
+  position: relative;
+
+  margin-left: 35px;
+
+  padding: 8px 3px;
+
+  color: #d4dfef;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    color 0.5s ease,
+    transform 0.5s ease;
+}
+
+
+/* Home hover */
+
+.navbar a:not(:first-child):hover {
+  color: #0284c7;
+
+  transform: translateY(-2px);
+}
+
+
+/* Animated 2px line */
+
+.navbar a:not(:first-child)::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: #0284c7;
+
+  border-radius: 10px;
+
+  transition: width 0.55s ease;
+}
+
+.navbar a:not(:first-child):hover::after {
+  width: 100%;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.container section {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 45px 0 70px;
+}
+
+
+/* =========================
+   TOTAL
+========================= */
+
+.totalAount {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.totalAount h3 {
+  margin: 0;
+  padding: 15px 32px;
+  color: #1e3a8a;
+  background: #ffffff;
+  /* border-left: 4px solid #0ea5e9; */
+  border-radius: 14px;
+  box-shadow:
+    0 8px 25px rgba(30, 64, 175, 0.10);
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease,
+    background 0.5s ease;
+}
+
+.totalAount h3:hover {
+  transform: translateY(-3px);
+  background: #f0f9ff;
+  box-shadow:
+    0 13px 30px rgba(30, 64, 175, 0.16);
+}
+
+
+/* =========================
+   INPUT AREA
+========================= */
+
+.mainContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 25px;
+  background: #dce5e8;
+  border: 1px solid #a6c5ed;
+  border-radius: 18px;
+  box-shadow:
+    0 10px 30px rgba(30, 64, 175, 0.10);
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease,
+    background 0.5s ease;
+}
+
+.mainContainer:hover {
+  transform: translateY(-1px);
+  background: #fafdff;
+  box-shadow:
+    0 16px 38px rgba(30, 64, 175, 0.15);
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.items,
+.amounts {
+  flex: 1;
+  min-width: 0;
+}
+
+.items input,
+.amounts input {
+  width: 100%;
+  padding: 14px 16px;
+  background: #f8fafc;
+  color: #020508;
+  border: 2px solid #dbeafe;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  transition:
+    border-color 0.45s ease,
+    background 0.45s ease,
+    box-shadow 0.45s ease,
+    transform 0.45s ease;
+}
+
+.items input::placeholder,
+.amounts input::placeholder {
+  color: #03060c;
+}
+
+.items input:hover,
+.amounts input:hover {
+  background: #f0f9ff;
+
+  border-color: #bfdbfe;
+}
+
+.items input:focus,
+.amounts input:focus {
+  background: #ffffff;
+  border-color: #38bdf8;
+  box-shadow:
+    0 0 0 4px rgba(56, 189, 248, 0.12);
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   ADD BUTTON
+========================= */
+
+.Addbtn {
+  display: flex;
+  align-items: center;
+}
+
+.Addbtn button {
+  border: none;
+  outline: none;
+
+  padding: 14px 28px;
+
+  border-radius: 10px;
+
+  background: #0ea5e9;
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 18px rgba(14, 165, 233, 0.25);
+
+  transition:
+    background 0.55s ease,
+    transform 0.45s ease,
+    box-shadow 0.55s ease;
+}
+
+.Addbtn button:hover {
+  background: #7c3aed;
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 11px 25px rgba(124, 58, 237, 0.28);
+}
+
+.Addbtn button:active {
+  transform: translateY(0) scale(0.96);
+}
+
+
+/* =========================
+   LIST CONTAINER
+========================= */
+
+.listContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.itemList,
+.amountList {
+  min-width: 0;
+  min-height: 320px;
+  padding: 25px;
+  background: #dce5e8;
+  border: 1px solid #cae6f3;
+  border-radius: 18px;
+  box-shadow:
+    0 10px 30px rgba(30, 64, 175, 0.09);
+  transition:
+    transform 0.55s ease,
+    background 0.55s ease,
+    box-shadow 0.55s ease,
+    border-color 0.55s ease;
+}
+
+.itemList:hover,
+.amountList:hover {
+  transform: translateY(-1px);
+  background: #c2d6e3;
+  border-color: #bfd8e6;
+  box-shadow:
+    0 18px 38px rgba(30, 64, 175, 0.14);
+}
+
+
+/* HEADINGS */
+
+.itemList h2,
+.amountList h2 {
+  margin: 0;
+  padding-bottom: 13px;
+  color: #1e3a8a;
+  font-size: 22px;
+  border-bottom: 2px solid #e0f2fe;
+}
+
+
+/* =========================
+   LIST ITEMS
+========================= */
+
+.itemList p,
+.amountList p {
+  margin: 0;
+}
+
+.itemList li,
+.amountList li {
+  list-style: none;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 13px;
+  margin-bottom: 10px;
+  background: #f5f5f5;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  color: #334155;
+  font-weight: 600;
+  transition:
+    background 0.45s ease,
+    transform 0.45s ease,
+    color 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.itemList li:hover,
+.amountList li:hover {
+  background: #f2f5f7;
+  color: #0c4a6e;
+  border-color: #f8fbfc;
+  transform: translateX(5px);
+  box-shadow:
+    0 5px 15px rgba(14, 165, 233, 0.10);
+}
+
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
+.amountList li button {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.amountList li button:hover {
+  background: #fee2e2;
+  transform: scale(1.15);
+  border-radius: 6px;
+  opacity: 0.8;
+}
+
+
+.amountList li button:hover {
+  background: #fecaca;
+
+  color: #dc2626;
+
+  transform: scale(1.15) rotate(5deg);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  width: 100%;
+
+  padding: 35px 20px;
+
+  text-align: center;
+
+  background: #16273e;
+
+  border-top: 1px solid #bfdbfe;
+
+  color: #829dc2;
+
+  box-shadow:
+    0 -6px 20px rgba(30, 64, 175, 0.08);
+}
+
+.footer h3 {
+  margin: 0 0 10px;
+
+  color: #b6c1de;
+
+  font-size: 24px;
+
+  transition:
+    color 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.footer h3:hover {
+  color: white;
+
+  opacity: 0.3;
+}
+
+.footer p {
+  margin: 0;
+
+  color: #eff0f1;
+
+  font-size: 14px;
+
+  transition: color 0.5s ease;
+}
+
+.footer p:hover {
+  color: #a3acb9;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .navbar a:first-child {
+    font-size: 20px;
+  }
+
+  .navbar a:not(:first-child) {
+    margin-left: 25px;
+  }
+
+  .container section {
+    width: 92%;
+  }
+
+  .mainContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .items,
+  .amounts {
+    width: 100%;
+  }
+
+  .Addbtn,
+  .Addbtn button {
+    width: 100%;
+  }
+
+  .listContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .itemList,
+  .amountList {
+    min-height: auto;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    min-height: 75px;
+
+    padding: 12px 5%;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+  }
+
+  .navbar a:first-child {
+    width: 100%;
+
+    margin-right: 0;
+
+    text-align: center;
+
+    font-size: 21px;
+  }
+
+  .navbar a:not(:first-child) {
+    margin-left: 0;
+    font-size: 14px;
+  }
+
+  .container section {
+    width: 92%;
+    padding-top: 25px;
+  }
+
+  .totalAount h3 {
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 16px;
+
+    padding: 13px 10px;
+  }
+
+  .mainContainer {
+    padding: 18px;
+
+    gap: 12px;
+  }
+
+  .listContainer {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .itemList,
+  .amountList {
+    min-height: 250px;
+
+    padding: 18px;
+  }
+
+  .itemList h2,
+  .amountList h2 {
+    font-size: 19px;
+  }
+
+  .itemList li,
+  .amountList li {
+    font-size: 14px;
+  }
+  
+  .footer {
+    padding: 28px 15px;
+   
+  }
+}
